@@ -33,7 +33,7 @@
 }
 
 #board{
-    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    background: linear-gradient(rgb(122, 230, 122), rgb(184, 184, 129));
     width: 90vmin;
     height: 92vmin;
     border: 2px solid black;
@@ -43,20 +43,22 @@
 }
 
 .head{
-    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
-    border: 2px solid rgb(34, 4, 34); 
+    background: linear-gradient(rgb(175, 51, 51), rgb(151, 255, 131));
+    /* background-image: url('../img/head.png'); */
+    border: 2px solid rgb(131, 22, 27); 
+    
     transform: scale(1.02);
-    border-radius: 9px;
+    border-radius: 50%;
 }
 
 .snake{
     background-color: purple;
     border: .25vmin solid white;
-    border-radius: 12px;
+    border-radius: 50%;
 }
 
 .food{
     background: linear-gradient(red, purple);
     border: .25vmin solid black;
-    border-radius: 8px;
+    border-radius: 50%;
 }

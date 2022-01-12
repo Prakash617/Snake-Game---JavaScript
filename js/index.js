@@ -49,6 +49,7 @@ function gameEngine(){
         snakeArr = [{x: 13, y: 15}];
         musicSound.play();
         score = 0; 
+        window.location = "/";
     }
 
     // If you have eaten the food, increment the score and regenerate the food
@@ -95,8 +96,8 @@ function gameEngine(){
     foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
-    foodElement.classList.add('food')
-    board.appendChild(foodElement);
+    foodElement.classList.add('food') //add class list in html.
+    board.appendChild(foodElement); //add node as a child of main node.
 
 
 }
@@ -115,32 +116,44 @@ else{
 }
 
 window.requestAnimationFrame(main);
+lastInputDirection = {x: 0, y: 0};
+inputDir = {x: 0, y: 0}
 window.addEventListener('keydown', e =>{
-    inputDir = {x: 0, y: 1} // Start the game
+     // Start the game
     moveSound.play();
+    console.log(e)
+    
     switch (e.key) {
         case "ArrowUp":
-            console.log("ArrowUp");
+            // console.log("ArrowUp");
+           if (lastInputDirection.y !== 0) break
             inputDir.x = 0;
             inputDir.y = -1;
+            lastInputDirection = inputDir;
             break;
 
         case "ArrowDown":
-            console.log("ArrowDown");
+            // console.log("ArrowDown");
+            if (lastInputDirection.y !== 0) break
             inputDir.x = 0;
             inputDir.y = 1;
+            lastInputDirection = inputDir;
             break;
 
         case "ArrowLeft":
-            console.log("ArrowLeft");
+            // console.log("ArrowLeft");
+            if (lastInputDirection.x !== 0) break
             inputDir.x = -1;
             inputDir.y = 0;
+            lastInputDirection = inputDir;
             break;
 
         case "ArrowRight":
-            console.log("ArrowRight");
+            // console.log("ArrowRight");
+            if (lastInputDirection.x !== 0) break
             inputDir.x = 1;
             inputDir.y = 0;
+            lastInputDirection = inputDir;
             break;
         default:
             break;
